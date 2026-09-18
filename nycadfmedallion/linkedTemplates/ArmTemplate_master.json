@@ -1,0 +1,84 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "nycadfmedallion"
+		},
+		"AzureDatabricksToAdf_accessToken": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accessToken' of 'AzureDatabricksToAdf'"
+		},
+		"NycDataLakeToAdf_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'NycDataLakeToAdf'"
+		},
+		"AzureDatabricksToAdf_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0916-131334-mwbzkl82"
+		},
+		"NycAdfToWeb_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://d37ci6vzurychx.cloudfront.net/"
+		},
+		"NycDataLakeToAdf_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://nyctaxidatalakestorage.dfs.core.windows.net/"
+		},
+		"storageEvent_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/31d1bcf0-b9a6-40f2-95a6-ac1e48ab0bfe/resourceGroups/NYC-Taxi_Project/providers/Microsoft.Storage/storageAccounts/nyctaxidatalakestorage"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "nycadfmedallion_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDatabricksToAdf_accessToken": {
+						"value": "[parameters('AzureDatabricksToAdf_accessToken')]"
+					},
+					"NycDataLakeToAdf_accountKey": {
+						"value": "[parameters('NycDataLakeToAdf_accountKey')]"
+					},
+					"AzureDatabricksToAdf_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricksToAdf_properties_typeProperties_existingClusterId')]"
+					},
+					"NycAdfToWeb_properties_typeProperties_url": {
+						"value": "[parameters('NycAdfToWeb_properties_typeProperties_url')]"
+					},
+					"NycDataLakeToAdf_properties_typeProperties_url": {
+						"value": "[parameters('NycDataLakeToAdf_properties_typeProperties_url')]"
+					},
+					"storageEvent_properties_typeProperties_scope": {
+						"value": "[parameters('storageEvent_properties_typeProperties_scope')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

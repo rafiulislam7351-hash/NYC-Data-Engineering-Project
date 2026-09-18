@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "nycadfmedallion"
+		},
+		"AzureDatabricksToAdf_accessToken": {
+			"value": ""
+		},
+		"NycDataLakeToAdf_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricksToAdf_properties_typeProperties_existingClusterId": {
+			"value": "0916-131334-mwbzkl82"
+		},
+		"NycAdfToWeb_properties_typeProperties_url": {
+			"value": "https://d37ci6vzurychx.cloudfront.net/"
+		},
+		"NycDataLakeToAdf_properties_typeProperties_url": {
+			"value": "https://nyctaxidatalakestorage.dfs.core.windows.net/"
+		},
+		"storageEvent_properties_typeProperties_scope": {
+			"value": "/subscriptions/31d1bcf0-b9a6-40f2-95a6-ac1e48ab0bfe/resourceGroups/NYC-Taxi_Project/providers/Microsoft.Storage/storageAccounts/nyctaxidatalakestorage"
+		}
+	}
+}

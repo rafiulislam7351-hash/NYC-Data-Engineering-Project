@@ -1,0 +1,15 @@
+{
+	"name": "nycadfmedallion",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "47c8a149-486c-4a97-b954-bdb319a37b9b",
+		"tenantId": "37e4118b-2371-46bd-b640-2adf387c272f"
+	}
+}

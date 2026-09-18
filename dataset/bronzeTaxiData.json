@@ -1,0 +1,21 @@
+{
+	"name": "bronzeTaxiData",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "NycDataLakeToAdf",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "trip_data",
+				"fileSystem": "bronze"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

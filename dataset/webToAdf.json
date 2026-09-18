@@ -1,0 +1,28 @@
+{
+	"name": "webToAdf",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "NycAdfToWeb",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"parameter_month": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": {
+					"value": "/trip-data/green_tripdata_2025-0@{dataset().parameter_month}.parquet",
+					"type": "Expression"
+				}
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

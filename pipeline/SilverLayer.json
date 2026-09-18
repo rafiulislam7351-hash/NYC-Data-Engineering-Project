@@ -1,0 +1,30 @@
+{
+	"name": "SilverLayer",
+	"properties": {
+		"activities": [
+			{
+				"name": "SilverLayer",
+				"type": "DatabricksNotebook",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.01:00:00",
+					"retry": 3,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": true,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/@rafiulislam7351outlook.onmicrosoft.com/NYC_Project/silver_layer"
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricksToAdf",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-09-18T05:10:48Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

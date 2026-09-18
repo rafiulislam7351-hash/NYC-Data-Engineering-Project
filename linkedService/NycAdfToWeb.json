@@ -1,0 +1,14 @@
+{
+	"name": "NycAdfToWeb",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "This Link Service is created to connect the 2025 NYC Taxi data with the Azure Data Factory",
+		"annotations": [],
+		"type": "HttpServer",
+		"typeProperties": {
+			"url": "https://d37ci6vzurychx.cloudfront.net/",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

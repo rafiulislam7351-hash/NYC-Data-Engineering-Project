@@ -1,0 +1,18 @@
+{
+	"name": "storageEvent",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/bronze/blobs/trip_data/trip-data/yellow_tripdata_",
+			"blobPathEndsWith": ".parquet",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/31d1bcf0-b9a6-40f2-95a6-ac1e48ab0bfe/resourceGroups/NYC-Taxi_Project/providers/Microsoft.Storage/storageAccounts/nyctaxidatalakestorage",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}
